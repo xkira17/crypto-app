@@ -9,3 +9,10 @@ export const getCriptoData = async (): Promise<CryptoData[]> => {
   )
   return response.data
 }
+
+export const getCriptoById = async (id: string): Promise<CryptoData> => {
+  const response = await axios.get(
+    `https://api.coingecko.com/api/v3/coins/${id || "bitcoin"}`
+  )
+  return response.data
+}

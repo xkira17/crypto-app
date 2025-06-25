@@ -2,7 +2,8 @@ export interface CryptoData {
   id: string
   symbol: string
   name: string
-  image: string
+  image: string // URL изображения монеты
+  // Цены и рыночные данные
   current_price: number
   market_cap: number
   market_cap_rank: number
@@ -21,3 +22,23 @@ export interface CryptoData {
   atl_change_percentage: number // Процентное изменение от ATL
   last_updated: string // Время последнего обновления
 }
+
+// export interface CryptoDataById {
+//   id: string
+//   symbol: string
+//   name: string
+//   image: {
+//     large: string // URL изображения монеты
+//     thumb: string // Миниатюра изображения
+//   }
+
+//   description: string // Описание монеты
+//   genesis_date: string | null // Дата создания монеты, может быть нулевой
+//   links: {
+//     homepage: string[] // Список ссылок на домашнюю страницу
+//     blockchain_site: string[] // Ссылки на блокчейн-сайт
+//     official_forum_url: string[] // Официальные форумы
+//     chat_url: string[] // Ссылки на чаты
+//     announcement_url: string[] // Ссылки на объявления
+//   }
+// }

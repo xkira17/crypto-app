@@ -38,7 +38,7 @@ const TopCryptoSidebar: React.FC = () => {
             <li key={crypto.id}>
               <Link
                 to={`/${crypto.id}`}
-                className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+                className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-blue-800 transition-colors duration-200"
               >
                 <img
                   src={crypto.image}

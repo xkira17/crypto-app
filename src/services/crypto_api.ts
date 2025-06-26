@@ -1,4 +1,8 @@
-import type { CryptoData } from "@/types/cryptoTypes"
+import type {
+  CryptoData,
+  CryptoDataById,
+  MarketChart,
+} from "@/types/cryptoTypes"
 import axios from "axios"
 
 export const getCriptoData = async (): Promise<CryptoData[]> => {
@@ -10,9 +14,19 @@ export const getCriptoData = async (): Promise<CryptoData[]> => {
   return response.data
 }
 
-export const getCriptoById = async (id: string): Promise<CryptoData> => {
+export const getCriptoById = async (id: string): Promise<CryptoDataById> => {
   const response = await axios.get(
     `https://api.coingecko.com/api/v3/coins/${id || "bitcoin"}`
+  )
+  return response.data
+}
+
+export const getChartData = async (
+  id: string,
+  timeframe: string
+): Promise<MarketChart> => {
+  const response = await axios.get(
+    `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${timeframe}&interval=daily`
   )
   return response.data
 }

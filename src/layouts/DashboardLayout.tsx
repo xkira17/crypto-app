@@ -16,7 +16,6 @@ const DashboardLayout: React.FC = () => {
 
       <div className="flex h-[calc(100vh-80px)]">
         {" "}
-        {/* Фиксированная высота */}
         <ScrollArea className="w-1/4 border-r">
           <aside className="p-4">
             <TopCryptoSidebar />
@@ -26,7 +25,7 @@ const DashboardLayout: React.FC = () => {
           <main className="p-4 w-full">
             {id ? (
               // Если есть ID - показываем информацию о криптовалюте
-              <Market />
+              <Market cryptoId={id} />
             ) : (
               // Если нет ID - показываем дашборд
               <>

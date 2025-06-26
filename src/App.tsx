@@ -6,7 +6,7 @@ function App() {
     <Router>
       <Routes>
         {/* Все роуты теперь внутри DashboardLayout */}
-        {/* <Route path="/bitcoin" element={<DashboardLayout />} /> */}
+        <Route path="/" element={<DashboardLayout />} />
         <Route path="/:id" element={<DashboardLayout />} />
       </Routes>
     </Router>

@@ -23,22 +23,29 @@ export interface CryptoData {
   last_updated: string // Время последнего обновления
 }
 
-// export interface CryptoDataById {
-//   id: string
-//   symbol: string
-//   name: string
-//   image: {
-//     large: string // URL изображения монеты
-//     thumb: string // Миниатюра изображения
-//   }
+export interface CryptoDataById {
+  id: string
+  symbol: string
+  name: string
+  image: {
+    small: string // URL маленького изображения монеты
+    large: string // URL изображения монеты
+    thumb: string // Миниатюра изображения
+  }
 
-//   description: string // Описание монеты
-//   genesis_date: string | null // Дата создания монеты, может быть нулевой
-//   links: {
-//     homepage: string[] // Список ссылок на домашнюю страницу
-//     blockchain_site: string[] // Ссылки на блокчейн-сайт
-//     official_forum_url: string[] // Официальные форумы
-//     chat_url: string[] // Ссылки на чаты
-//     announcement_url: string[] // Ссылки на объявления
-//   }
-// }
+  description: string // Описание монеты
+  genesis_date: string | null // Дата создания монеты, может быть нулевой
+  links: {
+    homepage: string[] // Список ссылок на домашнюю страницу
+    blockchain_site: string[] // Ссылки на блокчейн-сайт
+    official_forum_url: string[] // Официальные форумы
+    chat_url: string[] // Ссылки на чаты
+    announcement_url: string[] // Ссылки на объявления
+  }
+}
+
+export interface MarketChart {
+  prices: [number, number][] // Массив цен, где первый элемент - время в миллисекундах, второй - цена
+  market_caps: [number, number][] // Массив рыночных капитализаций
+  total_volumes: [number, number][] // Массив общих объемов торгов
+}
